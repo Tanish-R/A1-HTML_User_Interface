@@ -5,7 +5,9 @@ export default function Labs() {
     <div id="wd-labs">
       <h1>Labs</h1>
       <h2>Tanish Ravinuthala</h2>
-      <p id="wd-github">https://github.com/Tanish-R</p>
+      <a id="wd-github" href="https://github.com/Tanish-R/A1-HTML_User_Interface " target="_blank" rel="noopener noreferrer">
+        https://github.com/Tanish-R/A1-HTML_User_Interface
+      </a>
       <ul>
         <li>
           <Link href="/labs/lab1">Lab 1: HTML Examples</Link>
