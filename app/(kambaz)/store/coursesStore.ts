@@ -1,9 +1,19 @@
 "use client";
 
 import { create } from "zustand";
-import coursesJson from "../database/courses.json";
 
-export type Course = (typeof coursesJson)[number];
+export type Course = {
+  _id: string;
+  name: string;
+  number: string;
+  startDate: string;
+  endDate: string;
+  term: string;
+  department: string;
+  credits: number;
+  description: string;
+  image: string;
+};
 
 const emptyCourse: Course = {
   _id: "0",
@@ -18,21 +28,22 @@ const emptyCourse: Course = {
   image: "/images/reactjs.jpg",
 };
 
+// Client-side cache of the courses Express returns. The server is the source
+// of truth, so the cache starts empty and the Dashboard fills it.
 type CoursesStore = {
   courses: Course[];
+  setCourses: (courses: Course[]) => void;
   addCourse: (course: Course) => void;
   deleteCourse: (courseId: string) => void;
   updateCourse: (course: Course) => void;
 };
 
 export const useCoursesStore = create<CoursesStore>((set) => ({
-  courses: coursesJson,
+  courses: [],
+  setCourses: (courses) => set({ courses }),
   addCourse: (course) =>
     set((state) => ({
-      courses: [
-        ...state.courses,
-        { ...emptyCourse, ...course, _id: crypto.randomUUID() },
-      ],
+      courses: [...state.courses, course],
     })),
   deleteCourse: (courseId) =>
     set((state) => ({

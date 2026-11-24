@@ -8,6 +8,12 @@ export default function Labs() {
       <a id="wd-github" href="https://github.com/Tanish-R/A1-HTML_User_Interface " target="_blank" rel="noopener noreferrer">
         https://github.com/Tanish-R/A1-HTML_User_Interface
       </a>
+      <a href="https://github.com/Tanish-R/webdev-server" target="_blank" rel="noopener noreferrer">
+        https://github.com/Tanish-R/webdev-server
+      </a>
+      <a href="https://webdev-server-bbry.onrender.com/" target="_blank" rel="noopener noreferrer">
+        Render URL: https://webdev-server-bbry.onrender.com/
+      </a>
       <ul>
         <li>
           <Link href="/labs/lab1">Lab 1: HTML Examples</Link>

@@ -1,6 +1,14 @@
 import ModuleEditor from "./ModuleEditor";
 
-export default function ModulesControls() {
+export default function ModulesControls({
+  moduleName,
+  setModuleName,
+  addModule,
+}: {
+  moduleName: string;
+  setModuleName: (name: string) => void;
+  addModule: () => void;
+}) {
   return (
     <div id="wd-modules-controls" className="mb-3 flex flex-wrap items-center gap-2">
       <button
@@ -22,7 +30,11 @@ export default function ModulesControls() {
         <option value="publish-all">Publish All</option>
         <option value="unpublish-all">Unpublish All</option>
       </select>
-      <ModuleEditor />
+      <ModuleEditor
+        moduleName={moduleName}
+        setModuleName={setModuleName}
+        addModule={addModule}
+      />
     </div>
   );
 }

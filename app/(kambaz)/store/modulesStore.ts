@@ -1,7 +1,6 @@
 "use client";
 
 import { create } from "zustand";
-import modulesJson from "../database/modules.json";
 
 export type Lesson = {
   _id: string;
@@ -13,34 +12,29 @@ export type Lesson = {
 export type CourseModule = {
   _id: string;
   name: string;
-  description: string;
+  description?: string;
   course: string;
   lessons?: Lesson[];
   editing?: boolean;
 };
 
+// Client-side cache of the modules Express returns. The server is the source
+// of truth, so the cache starts empty and the Modules screen fills it.
 type ModulesStore = {
   modules: CourseModule[];
-  addModule: (module: { name: string; course: string }) => void;
+  setModules: (modules: CourseModule[]) => void;
+  addModule: (module: CourseModule) => void;
   deleteModule: (moduleId: string) => void;
   updateModule: (module: CourseModule) => void;
   editModule: (moduleId: string) => void;
 };
 
 export const useModulesStore = create<ModulesStore>((set) => ({
-  modules: modulesJson as CourseModule[],
+  modules: [],
+  setModules: (modules) => set({ modules }),
   addModule: (module) =>
     set((state) => ({
-      modules: [
-        ...state.modules,
-        {
-          _id: crypto.randomUUID(),
-          name: module.name,
-          description: "",
-          course: module.course,
-          lessons: [],
-        },
-      ],
+      modules: [...state.modules, module],
     })),
   deleteModule: (moduleId) =>
     set((state) => ({

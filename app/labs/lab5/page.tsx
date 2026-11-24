@@ -7,6 +7,7 @@ import HttpClient from "./HttpClient";
 import WorkingWithRemoteObjectsAsync from "./WorkingWithRemoteObjectsAsync";
 import WorkingWithRemoteArraysAsync from "./WorkingWithRemoteArraysAsync";
 import HelloRoute from "./HelloRoute";
+import CalculatorNextWebApiClient from "./Calculator";
 
 const HTTP_SERVER = process.env.NEXT_PUBLIC_HTTP_SERVER;
 
@@ -26,6 +27,7 @@ export default function Lab5() {
       <WorkingWithRemoteObjectsAsync />
       <WorkingWithRemoteArraysAsync />
       <HelloRoute />
+      <CalculatorNextWebApiClient />
     </div>
   );
 }
