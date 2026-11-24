@@ -5,13 +5,13 @@ export default function Labs() {
     <div id="wd-labs">
       <h1>Labs</h1>
       <h2>Tanish Ravinuthala</h2>
-      <a id="wd-github" href="https://github.com/Tanish-R/A1-HTML_User_Interface " target="_blank" rel="noopener noreferrer">
+      <a id="wd-github" className="block" href="https://github.com/Tanish-R/A1-HTML_User_Interface" target="_blank" rel="noopener noreferrer">
         https://github.com/Tanish-R/A1-HTML_User_Interface
       </a>
-      <a href="https://github.com/Tanish-R/webdev-server" target="_blank" rel="noopener noreferrer">
+      <a id="wd-server-github" className="block" href="https://github.com/Tanish-R/webdev-server" target="_blank" rel="noopener noreferrer">
         https://github.com/Tanish-R/webdev-server
       </a>
-      <a href="https://webdev-server-bbry.onrender.com/" target="_blank" rel="noopener noreferrer">
+      <a id="wd-server-render" className="block" href="https://webdev-server-bbry.onrender.com/" target="_blank" rel="noopener noreferrer">
         Render URL: https://webdev-server-bbry.onrender.com/
       </a>
       <ul>
